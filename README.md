@@ -1,6 +1,6 @@
 Repositório dos Projetos/Bibliotecas de 2014/2015
-            
 -------------------------------------------------------------
+
 Padrão do conteúdo dos projetos:
 
       Códigos.
