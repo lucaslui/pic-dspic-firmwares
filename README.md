@@ -1,4 +1,4 @@
-Repositório dos Projetos próprios efetuados em 2014
+Repositório dos Projetos/Bibliotecas próprias feitas em 2014/2015
 -------------------------------------------------------------
 
 Padrão do conteúdo dos projetos:
@@ -15,15 +15,6 @@ Significado:
       EAD: arquivos feitos para a confecção do aparelho físico (esquemático, pcb).
       Simulação: arquivo criado para simulação do projeto (Proteus).
 
-Autor:
-
-      nome: Lucas Lui Motta
-      email: lucasluimotta@gmail.com
-      github: github.com/lucaslui
-      linkdin: br.linkedin.com/pub/lucas-lui-motta/86/195/b63/
-      facebook: www.facebook.com/lucas.lui.71
-            
-Códigos feitos em 2014
 -------------------------------------------------------------
 Alguns passos para a programação de sistemas embarcados do tipo bare-metal:
 
@@ -46,6 +37,3 @@ Autor:
     github: github.com/lucaslui
     linkdin: br.linkedin.com/pub/lucas-lui-motta/86/195/b63/
     facebook: www.facebook.com/lucas.lui.71
-    
-# Bibliotecas-PIC
-Bibliotecas específicas para trabalhar com alguns periféricos.
