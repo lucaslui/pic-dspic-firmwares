@@ -30,6 +30,7 @@ Programação:
     - Escolher entre as técnicas de programação para sistemas embarcados.(pooling, máquina de estado, etc).
       
 Autor:
+-------------------------------------------------------------
 
     nome: Lucas Lui Motta
     email: lucasluimotta@gmail.com
