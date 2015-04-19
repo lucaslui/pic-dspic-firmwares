@@ -1,6 +1,6 @@
-Repositório dos Projetos/Bibliotecas próprias feitas em 2014/2015
+Repositório dos Projetos/Bibliotecas próprios 
+            feitos em 2014/2015
 -------------------------------------------------------------
-
 Padrão do conteúdo dos projetos:
 
       Códigos.
@@ -15,7 +15,6 @@ Significado:
       EAD: arquivos feitos para a confecção do aparelho físico (esquemático, pcb).
       Simulação: arquivo criado para simulação do projeto (Proteus).
 
--------------------------------------------------------------
 Alguns passos para a programação de sistemas embarcados do tipo bare-metal:
 
     - Escolher o microcontrolador entre as diversas familias no mercado (PIC - microchip e AVR - atmel).
