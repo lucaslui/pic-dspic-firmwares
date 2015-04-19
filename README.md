@@ -1,5 +1,5 @@
-Repositório dos Projetos/Bibliotecas próprios 
-            feitos em 2014/2015
+Repositório dos Projetos/Bibliotecas de 2014/2015
+            
 -------------------------------------------------------------
 Padrão do conteúdo dos projetos:
 
@@ -22,9 +22,9 @@ Alguns passos para a programação de sistemas embarcados do tipo bare-metal:
     - Escolher o gravador/programador e o tipo de conexão dele (USB, serial, ethernet). 
     - Configurar o depurador para nível de simulação virtual, ou então nível hardware (JTAG).
       
-    Programação:
-      
-    - Configurar/Tratar registrados de funções especiais (SFR's) do microcontrolador.
+Programação:
+
+    - Configurar/Tratar registradores de funções especiais (SFR's) do microcontrolador.
     - Configurar os registradores de configuração em tempo de gravação (Fusíveis Externos).
     - Criar/Adicionar bibliotecas para a aplicação.
     - Escolher entre as técnicas de programação para sistemas embarcados.(pooling, máquina de estado, etc).
