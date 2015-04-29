@@ -1,5 +1,3 @@
-Repositório dos Projetos/Bibliotecas de 2014/2015
--------------------------------------------------------------
 Projetos usando microcontroladores PIC e Linguagem C/C++
 -------------------------------------------------------------
 
