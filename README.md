@@ -1,4 +1,4 @@
-Projetos usando microcontroladores PIC e Linguagem C/C++
+Projetos usando microcontroladores PIC e Ling. C/C++
 -------------------------------------------------------------
 
 Padrão do conteúdo dos projetos:
