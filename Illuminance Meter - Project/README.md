@@ -1,7 +1,7 @@
   Projeto: 
   
   
-      Medidor de Iluminância - Mensura o valor de iluminância em lux, ao qual diz a quantidade de lúmen por 
+      Illuminance Meter - Mensura o valor de iluminância em lux, ao qual diz a quantidade de lúmen por 
       metro quadrado, o medidor conta com armazenamento periódico de valores, tendo como opções de tempo de 
       salve em 15 em 15 minutos, 30 em 30, 1 em 1 hora, esses valores são estão armazenados em uma lista na 
       qual pode ser acessada com a interface. A interface conta com um display de LCD do tipo HD44780, e 10 
