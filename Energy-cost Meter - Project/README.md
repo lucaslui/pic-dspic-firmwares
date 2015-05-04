@@ -1,7 +1,7 @@
   Projeto: 
   
   
-      Medidor de Custo - Medição constante do gasto de um aparelho eletroeletrônico diretamente em reais com 
+      Energy-cost Meter - Medição constante do gasto de um aparelho eletroeletrônico diretamente em reais com 
       o decorrer do tempo, usando como periféricos a conversão A/D do próprio PIC, um Amp.OP (LM 358), e um sensor
       de corrente (ACS712).
  	    
