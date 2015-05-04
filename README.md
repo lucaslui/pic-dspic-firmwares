@@ -3,18 +3,18 @@ Projetos usando microcontroladores PIC e Ling. C/C++
 
 Padrão do conteúdo dos projetos:
 
-      Códigos.
-      Produção.
-      EAD.
-      Simulação.
+      Code.
+      Debug.
+      EAD - PCB.
+      Out Production.
 
 Significado:
 
-      Código: destinado aos códigos produzidos em Linguagem C/C++ para o sistema embarcado do Projeto.
-      Produção: arquivos de saída como .hex gerado pela compilação dos códigos, destinado a produção.
-      EAD: arquivos feitos para a confecção do aparelho físico (esquemático, pcb).
-      Simulação: arquivo criado para simulação do projeto (Proteus).
-
+      Code: destinado aos códigos produzidos em Linguagem C/C++ para o sistema embarcado do Projeto.
+      Debug: arquivo criado para simulação do projeto (Proteus).
+      EAD - PCB: arquivos feitos para a confecção do aparelho físico (esquemático, pcb).
+      Out Production: arquivos de saída como .hex gerado pela compilação dos códigos, destinado a produção.
+      
 Alguns passos para a programação de sistemas embarcados do tipo bare-metal:
 
     - Escolher o microcontrolador entre as diversas familias no mercado (PIC - microchip e AVR - atmel).
