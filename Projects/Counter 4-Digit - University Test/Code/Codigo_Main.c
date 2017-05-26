@@ -1,20 +1,20 @@
 // =============================================================================
-//          INTRODU«√O AOS MICROPROCESADORES - MARCUS VINICIUS ATAIDE
+//          INTRODU√á√ÉO AOS MICROPROCESADORES - MARCUS VINICIUS ATAIDE
 //
-// QUEST√O 6 - Fazer um programa para acionar os display's de 7 segmento, 
-//             fazendo-os exibir de 0 ‡ 9, na sequÍncia, com frequÍncia de
+// QUEST√ÉO 6 - Fazer um programa para acionar os display's de 7 segmento, 
+//             fazendo-os exibir de 0 √† 9, na sequ√™ncia, com frequ√™ncia de
 //             varredura de 15Hz, podendo ser interrompido com o apertar de
-//             um bot„o tipo push-button.
+//             um bot√£o tipo push-button.
 //
 // Autores: Lucas Lui Motta                 RA: 120004538
 //          Gustavo Baryotto dos Santos     RA: 120002146
-//          LuÌs Garcia                     RA: 080010871
+//          Lu√≠s Garcia                     RA: 080010871
 //          Guilherme Fedato                RA: 120001629
 //
 // Softwares: 
 //            MPLAB X v3.0 (Ambiente de Desenvolvimento)
 //            XC8 v1.34 (Compilador)
-//            Protheus 8 (Simulador EletrÙnico)
+//            Protheus 8 (Simulador Eletr√¥nico)
 //
 // =============================================================================
 
@@ -24,7 +24,7 @@
 #include "Codigo_Basicos.h"
 #include "Config_Bits.h"
 
-// ================= DEFINI«’ES DOS SEGMENTOS DO DISPLAY =======================
+// ================= DEFINI√á√ïES DOS SEGMENTOS DO DISPLAY =======================
 
 #define zero    0b00111111; // G desligado,  numero 0 no display.
 #define um      0b00000110; // B e C ligado, numero 1 no display.
@@ -39,17 +39,17 @@
 
 // ======================= VARIAVEIS GLOBAIS====================================
 
-unsigned char display_alvo = 0; // Vari·vel utilizada na comutaÁ„o do display.
-unsigned char trava = 0;        // Vari·vel utilizada na lÛgica do bot„o hold.
-unsigned char unidade = 9;      // Vari·vel que ser· incrementada e mostrada no 
+unsigned char display_alvo = 0; // Vari√°vel utilizada na comuta√ß√£o do display.
+unsigned char trava = 0;        // Vari√°vel utilizada na l√≥gica do bot√£o hold.
+unsigned char unidade = 9;      // Vari√°vel que ser√° incrementada e mostrada no 
                                 // display de 7 segmentos.
 
 // =============================================================================
 
 unsigned char numeroDisplay(unsigned char numero) 
 {
-  // FunÁ„o que recebe o valor numÈrico da vari·vel numero e transforma no valor
-  // correspondente em bin·rio para o display de 7 segmentos.
+  // Fun√ß√£o que recebe o valor num√©rico da vari√°vel numero e transforma no valor
+  // correspondente em bin√°rio para o display de 7 segmentos.
   switch(numero)
   {
    case 0:
@@ -76,7 +76,7 @@ unsigned char numeroDisplay(unsigned char numero)
   return (0);
 }
 
-void ComutacaoDisplay(void) // Procedimento de multiplexaÁ„o dos display.
+void ComutacaoDisplay(void) // Procedimento de multiplexa√ß√£o dos display.
 {                           // Projeto com 4 display de 7 segmentos de 1 unidade
   switch(display_alvo)
   {
@@ -114,22 +114,22 @@ void ComutacaoDisplay(void) // Procedimento de multiplexaÁ„o dos display.
 void interrupt TMR0_TMR1(void)
 {
    if (INTCONbits.TMR0IF == 1) // Teste flag TMR0IF para ver se houve 
-   {                           // interrupÁ„o por estouro do TIMER0.
+   {                           // interrup√ß√£o por estouro do TIMER0.
        
-    // Osc. Interno 8Mhz, Clock interno PIC = 8Mhz/4 = 2Mhz ou seja cada ciclo È
+    // Osc. Interno 8Mhz, Clock interno PIC = 8Mhz/4 = 2Mhz ou seja cada ciclo √©
     // 500ns, com Preescaler de 1:256, 256x500ns para um incremento ficando
     // assim 128us por incremento, para que a varredura do display seja de 15Hz 
-    // È necess·rio que cada display mude a 60Hz, ou seja, 16,67ms para cada 
+    // √© necess√°rio que cada display mude a 60Hz, ou seja, 16,67ms para cada 
     // troca de display, logo, o registrador TMR0L deve conter um valor para
-    // para esse tempo, assim fazemos 16,67ms / 128us = 130 se o TMR0L vai atÈ 
+    // para esse tempo, assim fazemos 16,67ms / 128us = 130 se o TMR0L vai at√© 
     // 255, fazemos 255 - 130 = 125, esse valor deve ser sempre carregado no
     // registrador para que o estouro do temporizador ocorra no tempo certo.
     
-    INTCONbits.TMR0IF = 0;  // Limpando flag de estouro da interrupÁ„o.    
-    TMR0L = 0x7D;           // Valor de reinicializaÁ„o TMR0 para alcanÁar
-                            // 16,67ms na transiÁ„o de um display para o outro.
+    INTCONbits.TMR0IF = 0;  // Limpando flag de estouro da interrup√ß√£o.    
+    TMR0L = 0x7D;           // Valor de reinicializa√ß√£o TMR0 para alcan√ßar
+                            // 16,67ms na transi√ß√£o de um display para o outro.
     
-    ComutacaoDisplay(); // Chama funÁ„o que faz a transiÁ„o entre os displays.
+    ComutacaoDisplay(); // Chama fun√ß√£o que faz a transi√ß√£o entre os displays.
    }  
 }
 
@@ -139,24 +139,24 @@ void Inicializando_SFRs()
     
     OSCCON = 0b01110010;    
     
-//========================== REGISTRADORES PERIF…RICOS =========================
+//========================== REGISTRADORES PERIF√âRICOS =========================
     
     ADCON1 = 0x07;
     CMCON = 0x07;
     T0CON   = 0b01000111;  // TMR0 desligado, configurado como temporizador 8 
-                           // bits, referÍncia clock interno, com preescaler 1:8
+                           // bits, refer√™ncia clock interno, com preescaler 1:8
     
-//========================== REGISTRADORES DE INTERRUP«√O ======================
+//========================== REGISTRADORES DE INTERRUP√á√ÉO ======================
     
     INTCON = 0b11000000;
     INTCON2 = 0x00;
     
 //======================= REGISTRADORES DE ENTRADAS/SAIDAS ==================
     
-    TRISA = 0b11000011; // RA2,RA3,RA4 e RA5 configurados como saÌdA.
+    TRISA = 0b11000011; // RA2,RA3,RA4 e RA5 configurados como sa√≠dA.
     TRISB = 0xFF;       // RB1 configurado como entrada para o botao de trava.
-    TRISC = 0xFF;   // PORTC inteiro configurado como entrada (Alta imped‚ncia)
-    TRISD = 0x00;   // PORTD inteiro configura como saÌda para alimentar os 
+    TRISC = 0xFF;   // PORTC inteiro configurado como entrada (Alta imped√¢ncia)
+    TRISD = 0x00;   // PORTD inteiro configura como sa√≠da para alimentar os 
                     // segmentos do display
     
 //==============================================================================
@@ -166,10 +166,10 @@ void main()
 {
     Inicializando_SFRs(); 
 
-    TMR0L = 0x7D; // Valor dado ao registrador temporizador para alcanÁar
-                  // 16,67ms na transiÁ„o de um display para o outro. 
+    TMR0L = 0x7D;  // Valor dado ao registrador temporizador para alcan√ßar
+                   // 16,67ms na transi√ß√£o de um display para o outro. 
     T0CONbits.TMR0ON = 1;   // Habilitando Timer0.
-    INTCONbits.TMR0IE = 1;  // Ligando interrupÁ„o Timer0.
+    INTCONbits.TMR0IE = 1;  // Ligando interrup√ß√£o Timer0.
     while(1)
     {
         for(unsigned int i = 0; i < 60000; i++)
