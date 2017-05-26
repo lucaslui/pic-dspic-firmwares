@@ -1,23 +1,23 @@
 /*==================================================================================================================
  *
- *             PROJETO DE PI DO CURSO DE ENGENHARIA EL…TRICA UNISAL - Americana 2014
+ *             PROJETO DE PI DO CURSO DE ENGENHARIA EL√âTRICA UNISAL - Americana 2014
  *                               MCU utilizado: PIC18F452
  *
  *  Autor: Lucas Lui Motta.
  *
- *  Projeto: Medidor de Ilumin‚ncia
+ *  Projeto: Medidor de Ilumin√¢ncia
  *
  *  Softwares usados: XC8 - Compilador.
- *					  MPLABX - IDE.
- *					  PICKIT2 - Gravador.
- *					  Proteus Isis - Simulator.
- *				      Altium Designer Summer 08 - EAD.
+ *					          MPLABX - IDE.
+ *					          PICKIT2 - Gravador.
+ *					          Proteus Isis - Simulator.
+ *				            Altium Designer Summer 08 - EAD.
  *
  * ==================================================================================================================
- *  Macros/Bibliotecas baseados nos cÛdigos de: Rodrigo Maximiano Antunes de Almeida.
+ *  Macros/Bibliotecas baseados nos c√≥digos de: Rodrigo Maximiano Antunes de Almeida.
  *  Disponibilizados em: <sites.google.com/site/rmaalmeida/home>
  *
- *  Sobre LicenÁa: GNU GPL 2
+ *  Sobre Licen√ßa: GNU GPL 2
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -43,7 +43,7 @@
  *						 Funcoes_LCD.c
  *						 Esquematico_Wattimetro.SchDoc (Altium)	
  *						 PCB_Wattimetro.PcbDoc (Altium)
- *					     ProteusCustÌmetro.pdsprj (Proteus)
+ *					     ProteusCust√≠metro.pdsprj (Proteus)
  */
 // ==================================================================================================================
 
@@ -52,10 +52,10 @@
 #include "Macros_Basicos.h"     // Macros para trabalhar bit a bit em um byte: Setar, Limpar, Testar e  Inverter bit.
 
 #include "Funcoes_Basicas.h"    // Delay_ms e detector de botao com deboucing.
-#include "Funcoes_LCD.h"        // Funcoes do LCD, como inicializaÁ„o, escrita de dados e comandos.
-#include "Funcoes_ADC.h"        // Funcoes do conversor A/D do pic: InicializaÁ„o, convers„o e leitura.
+#include "Funcoes_LCD.h"        // Funcoes do LCD, como inicializa√ß√£o, escrita de dados e comandos.
+#include "Funcoes_ADC.h"        // Funcoes do conversor A/D do pic: Inicializa√ß√£o, convers√£o e leitura.
 
-#define TMR0IF 2 // DefiniÁıes para facilitar intendimento do programa na parte de tratamento de interrupÁıes.
+#define TMR0IF 2 // Defini√ß√µes para facilitar intendimento do programa na parte de tratamento de interrup√ß√µes.
 #define TMR1IF 0
 #define INT0IF 1
 
@@ -64,7 +64,7 @@
 
 unsigned char estadoAtual = 1, VindaPeloTMR0 = 0, ContadorSalvos = 0, ordemSalvada = 0;
 unsigned char DentroDeOutroMenu = 0, selecionadorTempoSalve = 0, numeroMaximoSalves = 0;
-unsigned int  valor_adc = 0;                            // Vari·vel para armazenar o valor da convers„o A/D.
+unsigned int  valor_adc = 0;                            // Vari√°vel para armazenar o valor da convers√£o A/D.
 unsigned int  valor_lux = 0;
 double valor_lux_provisorio = 0;
 unsigned char valor_adc_string[4] = {'0','0','0','0'}; // Vetor para armazenar String do valor da conversao A/D.
@@ -112,12 +112,12 @@ void TextoDaInterfacePrincipal(void)
   GeradorFrases("Lux");
 }
 
-void TextoDeEntrada(void) // Somente frases de interface com o usu·rio.
+void TextoDeEntrada(void) // Somente frases de interface com o usu√°rio.
 {
   GeradorFrases("Ligando...");
   CmdLcd(0b11000000);
   for(char i = 0; i <= 15; i++) // Criando digitos no formato preenchido
-  {                             // para dar a impress„o de uma barra de loading.
+  {                             // para dar a impress√£o de uma barra de loading.
      EscreverLcd(0b11111111);
      delay_ms(90);
   }
@@ -184,7 +184,7 @@ void ConversorStringValorADC(unsigned int valor)
 
 void ConversorStringRelogio(unsigned int valor, unsigned char *Stringtemp, char indicePrimeiraLeitura)
 {
-  char unidade = 0, decimal = 0, i = indicePrimeiraLeitura; //i = indicePrimeiraLeitura, para comeÁar o vetor na posiÁ„o certa
+  char unidade = 0, decimal = 0, i = indicePrimeiraLeitura; //i = indicePrimeiraLeitura, para come√ßar o vetor na posi√ß√£o certa
   if(valor != 0)
   {
     unidade = (valor % 10);                                 // Absorve o valor da unidade do numero e
@@ -198,10 +198,10 @@ void ConversorStringRelogio(unsigned int valor, unsigned char *Stringtemp, char 
   }else Stringtemp[i] = '0';
 }
 
-void EscritaRelogio(void) // FunÁ„o utilizada escrever as variaveis segundo, minuto, e hora no display
+void EscritaRelogio(void) // Fun√ß√£o utilizada escrever as variaveis segundo, minuto, e hora no display
 {
-    ConversorStringRelogio(segundo, &segundoString[0], 2); // Conversor para string do valor da variavel È mandado nessa funÁ„o
-    CmdLcd(0b10001101);                                    // a variavel, o vetor onde ser· armazenado, e o tamanho desse vetor.
+    ConversorStringRelogio(segundo, &segundoString[0], 2); // Conversor para string do valor da variavel √© mandado nessa fun√ß√£o
+    CmdLcd(0b10001101);                                    // a variavel, o vetor onde ser√° armazenado, e o tamanho desse vetor.
     for (unsigned char i = 0; i < 3; i++) EscreverLcd(segundoString[i]);
     ConversorStringRelogio(minuto, &minutoString[0], 2);
     CmdLcd(0b10001010);
@@ -211,10 +211,10 @@ void EscritaRelogio(void) // FunÁ„o utilizada escrever as variaveis segundo, min
     for (unsigned char i = 0; i < 2; i++) EscreverLcd(horaString[i]);
 }
 
-void EscritaAjustarHoras(void) // FunÁ„o utilizada escrever as variaveis segundo, minuto, e hora no display
+void EscritaAjustarHoras(void) // Fun√ß√£o utilizada escrever as variaveis segundo, minuto, e hora no display
 {
-    ConversorStringRelogio(segundo, &segundoString[0], 2); // Conversor para string do valor da variavel È mandado nessa funÁ„o
-    CmdLcd(0b11001001);                                    // a variavel, o vetor onde ser· armazenado, e o tamanho desse vetor.
+    ConversorStringRelogio(segundo, &segundoString[0], 2); // Conversor para string do valor da variavel √© mandado nessa fun√ß√£o
+    CmdLcd(0b11001001);                                    // a variavel, o vetor onde ser√° armazenado, e o tamanho desse vetor.
     for (unsigned char i = 0; i < 3; i++) EscreverLcd(segundoString[i]);
     ConversorStringRelogio(minuto, &minutoString[0], 2);
     CmdLcd(0b11000110);
@@ -249,7 +249,7 @@ void EscreverListaLCD(void)
   CmdLcd(0b10001011);
   for (unsigned char i = 0; i < 2; i++) EscreverLcd(horaString[i]);
   CmdLcd(0b11000111);
-  ConversorStringValorADC(ValoresSalvos.valor_adc[ordemSalvada]); // Procedimento feito para convers„o do valor_adc inteiro para o equivalente em string.
+  ConversorStringValorADC(ValoresSalvos.valor_adc[ordemSalvada]); // Procedimento feito para convers√£o do valor_adc inteiro para o equivalente em string.
   for (unsigned char i = 0; i < 4; i++) EscreverLcd(valor_adc_string[i]); // Percorre o vetor "vetor_adc_string" colocando string de numero a numero no lcd.
 }
 
@@ -262,19 +262,19 @@ void ModoEconomico(void)
  GeradorFrases("Modo Economico");
  CmdLcd(0b11000000);
  for (char i = 0; i <= 15; i++) // Criando digitos no formato preenchido
- {                              // para dar a impress„o de uma barra de loading.
+ {                              // para dar a impress√£o de uma barra de loading.
    EscreverLcd(0b11111111);
    delay_ms(90);
  }
  CmdLcd(0x08);        // Limpar totalmente dados do display.
  BitLimpar(PORTB, 3); // Desligando backlight.
  TRISD = 0xFF;        // Deixando todas as PORTAS como entrada (high impedance)
- TRISE = 0b11101111;  // assim deixando o mcu com consumo minÌmo.
+ TRISE = 0b11101111;  // assim deixando o mcu com consumo min√≠mo.
  while (1)
  {
   if ((DebBotao(&PORTB, 0, 10, 0)) == 1) break;
  }
- InicializandoLCD(); // Reinicializando funÁıes do LCD.
+ InicializandoLCD(); // Reinicializando fun√ß√µes do LCD.
  CmdLcd(0x01);       // Limpa display lcd
  BitSetar(PORTB, 3); // Ligando backlight.
  TextoDaInterfacePrincipal();
@@ -323,7 +323,7 @@ void MenuListaDeValoresSalvo(void)
       ordemSalvada--;
       EscreverListaLCD();
     }
-    if ((DebBotao(&PORTB, 1, 10, 0)) == 1) break; // Mesmo Botao que entra È o que sai desse Menu.
+    if ((DebBotao(&PORTB, 1, 10, 0)) == 1) break; // Mesmo Botao que entra √© o que sai desse Menu.
     if ((DebBotao(&PORTB, 0, 10, 0)) == 1)
     {
         modoEconomicoAtivado = 1;
@@ -346,7 +346,7 @@ void MenuListaDeValoresSalvo(void)
 }
 
 
-void MenuAjustarRelogio(void) // FunÁ„o feita para o ajuste do relogio.
+void MenuAjustarRelogio(void) // Fun√ß√£o feita para o ajuste do relogio.
 {
   BitLimpar(T0CON, 7); // Desliga TMR0.
   BitLimpar(T1CON,0);  // Desliga  TMR1.
@@ -356,7 +356,7 @@ void MenuAjustarRelogio(void) // FunÁ„o feita para o ajuste do relogio.
   char selecionador = 0, temp = 0;
   CmdLcd(0b00001110); // Liga Cursor.
   for(char i=0; i<5;i++)CmdLcd(0b00010100); // Desloca cursor 5x para direita para alcancar a parte do segundo.
-  while (1) // Entra em loop infinito, fica aqui no menu de ajustar relogio atÈ o botao de break ser precionado.
+  while (1) // Entra em loop infinito, fica aqui no menu de ajustar relogio at√© o botao de break ser precionado.
   {
     if ((DebBotao(&PORTA, 3, 10, 0)) == 1)
     {
@@ -531,12 +531,12 @@ void MenuAjusteTempoSalve(void)
 void SistemaNumericoRelogio(void)
 {
     segundo++;           // Cada incremento dessa variavel contator equivale a 1 segundo.
-    if (segundo == 60)   // Convers„o basica para transformar em um relÛgio.
+    if (segundo == 60)   // Convers√£o basica para transformar em um rel√≥gio.
     {
       segundo = 0;
       minuto++;
     }
-    if (minuto == 60)    // Convers„o basica para transformar em um relÛgio.
+    if (minuto == 60)    // Convers√£o basica para transformar em um rel√≥gio.
     {
       minuto = 0;
       hora++;
@@ -569,7 +569,7 @@ void MenuResetandoValoresSalvos(void)
   CmdLcd(0b11000110);
   GeradorFrases("****");
   CmdLcd(0b00001110); // Liga Cursor.
-  CmdLcd(0b00010000); // Desloca cursor para primeiro digito do codigo seguranÁa.
+  CmdLcd(0b00010000); // Desloca cursor para primeiro digito do codigo seguran√ßa.
   unsigned char digitoCodigo = 0, CodigoPrimeiroDigito = 0, CodigoSegundoDigito = 0, CodigoTerceiroDigito = 0, CodigoQuartoDigito = 0;
   while(1)
   {
@@ -603,14 +603,14 @@ void MenuResetandoValoresSalvos(void)
     switch (digitoCodigo)  //
     {
     case 0: // Caso do primeiro digito.
-      if ((DebBotao(&PORTA, 4, 10, 0)) == 1) // Bot„o de mover para cima.
+      if ((DebBotao(&PORTA, 4, 10, 0)) == 1) // Bot√£o de mover para cima.
       {
         CodigoPrimeiroDigito++;
         if (CodigoPrimeiroDigito == 10) CodigoPrimeiroDigito = 0;
         EscreverLcd(ConverterNumeroParaCaracter(CodigoPrimeiroDigito));
         CmdLcd(0b00010000); // Desloca para esquerda devolta.
       }
-      if ((DebBotao(&PORTA, 5, 10, 0)) == 1) // Bot„o de mover para baixo.
+      if ((DebBotao(&PORTA, 5, 10, 0)) == 1) // Bot√£o de mover para baixo.
       {
         if(CodigoPrimeiroDigito == 0) CodigoPrimeiroDigito = 9;
         else CodigoPrimeiroDigito--;
@@ -619,14 +619,14 @@ void MenuResetandoValoresSalvos(void)
       }
       break;
     case 1:
-      if ((DebBotao(&PORTA, 4, 10, 0)) == 1) // Bot„o de mover para cima.
+      if ((DebBotao(&PORTA, 4, 10, 0)) == 1) // Bot√£o de mover para cima.
       {
         CodigoSegundoDigito++;
         if (CodigoSegundoDigito == 10) CodigoSegundoDigito = 0;
         EscreverLcd(ConverterNumeroParaCaracter(CodigoSegundoDigito));
         CmdLcd(0b00010000); // Desloca para esquerda devolta.
       }
-      if ((DebBotao(&PORTA, 5, 10, 0)) == 1) // Bot„o de mover para baixo.
+      if ((DebBotao(&PORTA, 5, 10, 0)) == 1) // Bot√£o de mover para baixo.
       {
         if(CodigoSegundoDigito == 0) CodigoSegundoDigito = 9;
         else CodigoSegundoDigito--;
@@ -635,14 +635,14 @@ void MenuResetandoValoresSalvos(void)
       }
       break;
     case 2:
-      if ((DebBotao(&PORTA, 4, 10, 0)) == 1) // Bot„o de mover para cima.
+      if ((DebBotao(&PORTA, 4, 10, 0)) == 1) // Bot√£o de mover para cima.
       {
         CodigoTerceiroDigito++;
         if (CodigoTerceiroDigito == 10) CodigoTerceiroDigito = 0;
         EscreverLcd(ConverterNumeroParaCaracter(CodigoTerceiroDigito));
         CmdLcd(0b00010000); // Desloca para esquerda devolta.
       }
-      if ((DebBotao(&PORTA, 5, 10, 0)) == 1) // Bot„o de mover para baixo.
+      if ((DebBotao(&PORTA, 5, 10, 0)) == 1) // Bot√£o de mover para baixo.
       {
         if(CodigoTerceiroDigito == 0) CodigoTerceiroDigito = 9;
         else CodigoTerceiroDigito--;
@@ -651,14 +651,14 @@ void MenuResetandoValoresSalvos(void)
       }
       break;
     case 3:
-      if ((DebBotao(&PORTA, 4, 10, 0)) == 1) // Bot„o de mover para cima.
+      if ((DebBotao(&PORTA, 4, 10, 0)) == 1) // Bot√£o de mover para cima.
       {
         CodigoQuartoDigito++;
         if (CodigoQuartoDigito == 10) CodigoQuartoDigito = 0;
         EscreverLcd(ConverterNumeroParaCaracter(CodigoQuartoDigito));
         CmdLcd(0b00010000); // Desloca para esquerda devolta.
       }
-      if ((DebBotao(&PORTA, 5, 10, 0)) == 1) // Bot„o de mover para baixo.
+      if ((DebBotao(&PORTA, 5, 10, 0)) == 1) // Bot√£o de mover para baixo.
       {
         if(CodigoQuartoDigito == 0) CodigoQuartoDigito = 9;
         else CodigoQuartoDigito--;
@@ -692,7 +692,7 @@ void MenuResetandoValoresSalvos(void)
     GeradorFrases("Apagando Valores");
     CmdLcd(0b11000000);
     for (char i = 0; i <= 15; i++) // Criando digitos no formato preenchido
-    {                              // para dar a impress„o de uma barra de loading.
+    {                              // para dar a impress√£o de uma barra de loading.
       EscreverLcd(0b11111111);
       delay_ms(90);
     }
@@ -727,7 +727,7 @@ void interrupt INT0_TMR0()
     BitLimpar(T1CON,0); // Desliga TMR1.
     TMR0H = 0b11110000;
     TMR0L = 0b10111101; // Inicializa com valor 61629. em binario  msbyte11110000 lsbyte 10111101 p/contar 3096 com preescaler 1:256 =~ 1 sec
-    SistemaNumericoRelogio();  // Incrementa segundo++ e converte para sistema numerico de um relÛgio.
+    SistemaNumericoRelogio();  // Incrementa segundo++ e converte para sistema numerico de um rel√≥gio.
     SalvarParaTempoDesejado(); // Salva no tempo de salve escolhido.
     if(DentroDeOutroMenu == FALSE)
     {
@@ -736,7 +736,7 @@ void interrupt INT0_TMR0()
     }
   }
 
-  if (BitTestar(PIR1, TMR1IF)) // Flag para sinilizar estou do TMR1, assim escrevendo valor da convers„o A/D no LCD.
+  if (BitTestar(PIR1, TMR1IF)) // Flag para sinilizar estou do TMR1, assim escrevendo valor da convers√£o A/D no LCD.
   {
     BitLimpar(PIR1, TMR1IF);
     TMR1H = 0b11100110;   // Reinicia Contador TMR1.
@@ -758,7 +758,7 @@ void interrupt INT0_TMR0()
          valor_lux_provisorio = (valor_lux_provisorio + 17899);
          valor_lux_provisorio = (valor_lux_provisorio - ((double)59.222*(valor_adc)));
          valor_lux = (int)valor_lux_provisorio;
-         ConversorStringValorADC(valor_lux); // Procedimento feito para convers„o do valor_adc inteiro para o equivalente em string.
+         ConversorStringValorADC(valor_lux); // Procedimento feito para convers√£o do valor_adc inteiro para o equivalente em string.
          CmdLcd(0b11000111);                 // Valor em string aparecera na linha 1 e coluna 7 somente.
          for (unsigned char i = 0; i < 4; i++) EscreverLcd(valor_adc_string[i]); // Percorre o vetor "vetor_adc_string" colocando string do valor adc no lcd.
         }     
@@ -771,32 +771,32 @@ void InicializandoSFRs(void)
   TRISA = 0xFF;         // PORTA configuradas como entrada (High Impendance).
   TRISB = 0b11110111;         // PORTA configuradas como entrada (High Impendance).
   CCP1CON = 0x00;       // Desligando modo CCP, pinos configurados como digital I/O.
-  INTCON = 0b11100000;  // Todas prioridades de interrupÁıes ligadas, INT0 ativado, TMR0 ativado;
-  INTCON2= 0x00;        // InterrupÁ„o do INT0 na borda de descida.
+  INTCON = 0b11100000;  // Todas prioridades de interrup√ß√µes ligadas, INT0 ativado, TMR0 ativado;
+  INTCON2= 0x00;        // Interrup√ß√£o do INT0 na borda de descida.
   T0CON = 0b00000111;   // TMR0 configurado como 16 bit timer, referencia oscilador interno, 1:256 prescaler.
   TMR0H = 0b11111111;   // Inicializa o TMR0 com com valor baixo para aparecer o relogio no display
   TMR0L = 0b11111101;   // na maneira mais rapida possivel.
   T1CON = 0b10110000;   // TMR1 configurado como 16 bit timer, referencia oscilador interno, 1:8 prescaler.
   TMR1H = 0b11100110;   // Inicializa o TMR1, valor do contador do TMR1 com 59035 para q tenha somente incremento de 6500
   TMR1L = 0b10011011;   // assim tendo 50 ms de tempo de cada estouro.
-  BitSetar(PIE1,0);     // Habilita interrupÁ„o do TMR1.
+  BitSetar(PIE1,0);     // Habilita interrup√ß√£o do TMR1.
   BitSetar(PORTB, 3);   // Ligando backlight.
 }
 
 void main(void)
 {
-  InicializandoSFRs(); //InicializaÁıes do Sistema.
+  InicializandoSFRs(); //Inicializa√ß√µes do Sistema.
   InicializandoLCD();
   InicializandoADC();
   QuantidadeSalves();
   TextoDeEntrada();
   while (1)
   {
-    for (unsigned int i = 0; i < 65000; i++)         // FunÁıes feitas para evitar o efeito de pooling da leitura ADC.
+    for (unsigned int i = 0; i < 65000; i++)         // Fun√ß√µes feitas para evitar o efeito de pooling da leitura ADC.
     {
-      if ((i % 1250) == 0) valor_adc = LeituraADC(); // Somente ler· a entrada ADC a cada 15,5 ms.
-      if ((DebBotao(&PORTA, 1, 10, 0)) == 1) MenuAjustarRelogio();          // Monitora o botao de ajuste de relÛgio.
-      if ((DebBotao(&PORTB, 1, 10, 0)) == 1) MenuListaDeValoresSalvo();     // Monitora o botao de ajuste de relÛgio.
+      if ((i % 1250) == 0) valor_adc = LeituraADC(); // Somente ler√° a entrada ADC a cada 15,5 ms.
+      if ((DebBotao(&PORTA, 1, 10, 0)) == 1) MenuAjustarRelogio();          // Monitora o botao de ajuste de rel√≥gio.
+      if ((DebBotao(&PORTB, 1, 10, 0)) == 1) MenuListaDeValoresSalvo();     // Monitora o botao de ajuste de rel√≥gio.
       if ((DebBotao(&PORTB, 2, 10, 0)) == 1) MenuAjusteTempoSalve();    // Monitora o botao de ajuste de tempo de salve.
       if ((DebBotao(&PORTB, 4, 10, 0)) == 1) MenuResetandoValoresSalvos();  // Monitora o botao de ajuste de tempo de salve.
       if ((DebBotao(&PORTB, 0, 10, 0)) == 1) ModoEconomico();
