@@ -8,10 +8,10 @@
  *  Projeto: Medidor de Iluminância
  *
  *  Softwares usados: XC8 - Compilador.
- *					          MPLABX - IDE.
- *					          PICKIT2 - Gravador.
- *					          Proteus Isis - Simulator.
- *				            Altium Designer Summer 08 - EAD.
+ *					   MPLABX - IDE.
+ *					   PICKIT2 - Gravador.
+ *					   Proteus Isis - Simulator.
+ *				     Altium Designer Summer 08 - EAD.
  *
  * ==================================================================================================================
  *  Macros/Bibliotecas baseados nos códigos de: Rodrigo Maximiano Antunes de Almeida.
