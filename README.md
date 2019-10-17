@@ -35,5 +35,5 @@ Autor:
     nome: Lucas Lui Motta
     email: lucasluimotta@gmail.com
     github: github.com/lucaslui
-    linkedin: https://www.linkedin.com/in/lucas-lui-motta-eng/
+    linkedin: www.linkedin.com/in/lucas-lui-motta-eng/
     facebook: www.facebook.com/lucas.lui.71
