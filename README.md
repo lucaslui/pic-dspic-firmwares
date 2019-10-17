@@ -1,4 +1,4 @@
-Projetos usando microcontroladores PIC e Ling. C/C++
+Projetos de firmwares usando Ling. C/C++ para microcontroladores e microprocessadores
 -------------------------------------------------------------
 
 Padrão do conteúdo dos projetos:
