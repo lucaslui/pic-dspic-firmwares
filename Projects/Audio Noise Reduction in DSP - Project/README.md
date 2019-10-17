@@ -1,4 +1,4 @@
-Projeto de Iniciação Tecnológica e TCC - Algoritmos de redução de ruído implementados em sinais de voz implementado em DSP
+Projeto de Iniciação Tecnológica e TCC - Algoritmos de redução de ruído em sinais de voz implementados em DSP
 -------------------------------------------------------------
 
 Resumo:
