@@ -1,4 +1,4 @@
-Projetos de firmwares usando Ling. C/C++ para microcontroladores e microprocessadores
+Projetos de sistemas embarcados com microcontroladores e microprocessadores
 -------------------------------------------------------------
 
 Padrão do conteúdo dos projetos:
