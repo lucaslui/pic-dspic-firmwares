@@ -31,12 +31,3 @@ Hardware e Infraestrutura:
       controle é possível ordenar a transferência de dados e configurar alguns parâmetros do CODEC como, por exemplo, o protocolo de
       transferência de dados que será utilizado, a frequência de amostragem desejada, a resolução do conversor A/D, o volume do sinal de
       saída, a filtragem do sinal de entrada etc.
-      
-Autor:
--------------------------------------------------------------
-
-    nome: Lucas Lui Motta
-    email: lucasluimotta@gmail.com
-    github: github.com/lucaslui
-    linkdin: br.linkedin.com/pub/lucas-lui-motta/86/195/b63/
-    facebook: www.facebook.com/lucas.lui.71
