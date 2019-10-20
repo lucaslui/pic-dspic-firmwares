@@ -1,19 +1,19 @@
-Projetos de sistemas embarcados com microcontroladores e microprocessadores
+Projetos de sistemas embarcados em baremetal
 -------------------------------------------------------------
 
 Padrão do conteúdo dos projetos:
 
-      Code.
-      Debug.
-      EAD-PCB.
-      Out Production.
+     Sources
+     Simulation
+     Schematic
+     Output.
 
 Significado:
 
-      Code: destinado aos códigos produzidos em Linguagem C/C++ para o sistema embarcado do Projeto.
-      Debug: arquivo criado para simulação do projeto (Proteus).
-      EAD-PCB: arquivos feitos para a confecção do aparelho físico (esquemático, pcb).
-      Out Production: arquivos de saída como .hex gerado pela compilação dos códigos, destinado a produção.
+     Sources: destinado aos códigos produzidos em Linguagem C/C++ para o sistema embarcado do Projeto.
+     Simulation: arquivo criado para simulação do projeto (Proteus).
+     Schematic: arquivos feitos para a confecção do aparelho físico (esquemático, pcb).
+     Output: arquivos de saída como .hex gerado pela compilação dos códigos, destinado a produção.
       
 Alguns passos para a programação de sistemas embarcados do tipo bare-metal:
 
