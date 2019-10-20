@@ -1,4 +1,4 @@
-Projetos de sistemas embarcados com microcontroladores e microprocessadores
+Projetos de sistemas embarcados em baremetal
 -------------------------------------------------------------
 
 Padrão do conteúdo dos projetos:
