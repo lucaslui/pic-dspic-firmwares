@@ -3,17 +3,17 @@ Projetos de sistemas embarcados com microcontroladores e microprocessadores
 
 Padrão do conteúdo dos projetos:
 
-    Sources
-    Simulation
-    Schematic
-    Output.
+     Sources
+     Simulation
+     Schematic
+     Output.
 
 Significado:
 
-    Sources: destinado aos códigos produzidos em Linguagem C/C++ para o sistema embarcado do Projeto.
-    Simulation: arquivo criado para simulação do projeto (Proteus).
-    Schematic: arquivos feitos para a confecção do aparelho físico (esquemático, pcb).
-    Output: arquivos de saída como .hex gerado pela compilação dos códigos, destinado a produção.
+     Sources: destinado aos códigos produzidos em Linguagem C/C++ para o sistema embarcado do Projeto.
+     Simulation: arquivo criado para simulação do projeto (Proteus).
+     Schematic: arquivos feitos para a confecção do aparelho físico (esquemático, pcb).
+     Output: arquivos de saída como .hex gerado pela compilação dos códigos, destinado a produção.
       
 Alguns passos para a programação de sistemas embarcados do tipo bare-metal:
 
