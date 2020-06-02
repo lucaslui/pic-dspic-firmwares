@@ -1,7 +1,7 @@
 Projetos de sistemas embarcados em baremetal
 -------------------------------------------------------------
 
-Padrão do conteúdo dos projetos:
+Padrão de conteúdo (diretórios):
 
      Sources
      Simulation
@@ -10,10 +10,10 @@ Padrão do conteúdo dos projetos:
 
 Significado:
 
-     Sources: destinado aos códigos produzidos em Linguagem C/C++ para o sistema embarcado do Projeto.
-     Simulation: arquivo criado para simulação do projeto (Proteus).
-     Schematic: arquivos feitos para a confecção do aparelho físico (esquemático, pcb).
-     Output: arquivos de saída como .hex gerado pela compilação dos códigos, destinado a produção.
+     Sources: conjunto de arquivos de códigos em Linguagem C/C++ para o sistema embarcado.
+     Simulation: conjunto de arquivo criado para simulação do projeto (Proteus).
+     Schematic: conjunto arquivos feitos para a confecção do aparelho físico (esquemático, pcb).
+     Output: conjunto de arquivos de saída como o .hex gerado pela compilação dos códigos para produção.
       
 Alguns passos para a programação de sistemas embarcados do tipo bare-metal:
 
